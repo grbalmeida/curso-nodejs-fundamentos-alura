@@ -10,7 +10,8 @@
   "author": "Gilvan Ribeiro",
   "license": "ISC",
   "dependencies": {
-    "express": "4.16.3"
+    "express": "4.16.3",
+    "marko": "4.13.4-1"
   },
   "devDependencies": {
     "nodemon": "1.18.4"
