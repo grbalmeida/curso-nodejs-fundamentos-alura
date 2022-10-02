@@ -9,6 +9,8 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
     marko_helpers = require("marko/src/runtime/html/helpers"),
     marko_loadTag = marko_helpers.t,
     component_globals_tag = marko_loadTag(require("marko/src/components/taglib/component-globals-tag")),
+    marko_forEach = marko_helpers.f,
+    marko_escapeXml = marko_helpers.x,
     init_components_tag = marko_loadTag(require("marko/src/components/taglib/init-components-tag")),
     await_reorderer_tag = marko_loadTag(require("marko/src/taglibs/async/await-reorderer-tag"));
 
@@ -19,11 +21,25 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<header><nav><ul><li><a href=\"http://localhost:3000\">Home</a></li><li><a href=\"http://localhost:3000/livros\">Livros</a></li></ul></nav></header><h1>Listagem de livros</h1><table><tr><th>ID</th><th>Título</th></tr><tr><td>1</td><td>Fundamentos do Node</td></tr></table>");
+  out.w("<header><nav><ul><li><a href=\"http://localhost:3000\">Home</a></li><li><a href=\"http://localhost:3000/livros\">Livros</a></li></ul></nav></header><h1>Listagem de livros</h1><table><tr><th>ID</th><th>Título</th></tr>");
+
+  var for__16 = 0;
+
+  marko_forEach(data.livros, function(livro) {
+    var keyscope__17 = "[" + ((for__16++) + "]");
+
+    out.w("<tr><td>" +
+      marko_escapeXml(livro.id) +
+      "</td><td>" +
+      marko_escapeXml(livro.titulo) +
+      "</td></tr>");
+  });
+
+  out.w("</table>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "19");
+  await_reorderer_tag({}, out, __component, "21");
 
   out.w("</body></html>");
 }

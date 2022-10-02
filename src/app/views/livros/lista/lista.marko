@@ -22,9 +22,9 @@
                 <th>ID</th>
                 <th>Título</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Fundamentos do Node</td>
+            <tr for (livro in data.livros)>
+                <td>${livro.id}</td>
+                <td>${livro.titulo}</td>
             </tr>
         </table>
     </body>
