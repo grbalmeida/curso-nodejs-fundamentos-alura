@@ -1,5 +1,4 @@
-const express = require('express');
-const app = express();
+const app = require('./src/config/custom-express');
 
 app.get('/', function(req, resp) {
     resp.send(`
