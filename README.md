@@ -30,6 +30,12 @@ npm install sqlite3
 npm install body-parser@1.18.3 --save-exact
 ```
 
+### Comando para instalar o Method Override
+
+```
+npm install method-override@3.0.0 --save-exact
+```
+
 # Nodemon e MarkoJS
 
 O Nodemon possui um pequeno bug que o faz reprocessar indefinidamente os arquivos de template com a extensão .marko transformando-os em arquivos com a extensão .marko.js, mesmo que não tenhamos feito nenhuma modificação em nossos templates.

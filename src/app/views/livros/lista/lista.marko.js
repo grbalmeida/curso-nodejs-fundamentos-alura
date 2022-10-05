@@ -22,12 +22,12 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<header><nav><ul><li><a href=\"http://localhost:3000\">Home</a></li><li><a href=\"http://localhost:3000/livros\">Livros</a></li></ul></nav></header><h1>Listagem de livros</h1><table id=\"livros\"><tr><th>ID</th><th>Título</th><th>Preço</th><th>Editar</th><th>Remover</th></tr>");
+  out.w("<header><nav><ul><li><a href=\"/\">Home</a></li><li><a href=\"/livros\">Livros</a></li></ul></nav></header><h1>Listagem de livros</h1><a href=\"/livros/form\">Adicionar livro</a><table id=\"livros\"><tr><th>ID</th><th>Título</th><th>Preço</th><th>Editar</th><th>Remover</th></tr>");
 
-  var for__20 = 0;
+  var for__21 = 0;
 
   marko_forEach(data.livros, function(livro) {
-    var keyscope__21 = "[" + ((for__20++) + "]");
+    var keyscope__22 = "[" + ((for__21++) + "]");
 
     out.w("<tr id=\"livro_" +
       marko_escapeXmlAttr(livro.id) +
@@ -46,7 +46,7 @@ function render(input, out, __component, component, state) {
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "30");
+  await_reorderer_tag({}, out, __component, "31");
 
   out.w("</body></html>");
 }

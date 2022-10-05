@@ -9,7 +9,10 @@
 
         <form action="/livros" method="post">
 
-            <input type="hidden" id="id" name="id" value="${data.livro.id}" />
+            <div if(data.livro.id)>
+                <input type="hidden" name="_method" value="PUT" />
+                <input type="hidden" id="id" name="id" value="${data.livro.id}" />
+            </div>
 
             <div>
                 <label for="titulo">Titulo:</label>
